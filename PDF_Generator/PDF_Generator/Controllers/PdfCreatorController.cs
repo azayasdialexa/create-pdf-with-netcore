@@ -23,21 +23,21 @@ namespace PDF_Generator.Controllers
             var globalSettings = new GlobalSettings
             {
                 ColorMode = ColorMode.Color,
-                Orientation = Orientation.Portrait,
-                PaperSize = PaperKind.A4,
-                Margins = new MarginSettings { Top = 10 },
-                DocumentTitle = "PDF Report",
-                //Out = @"D:\PDFCreator\Employee_Report.pdf"  USE THIS PROPERTY TO SAVE PDF TO A PROVIDED LOCATION
+                Orientation = Orientation.Landscape,
+                PaperSize = PaperKind.Letter,
+                PageOffset = -1,
+                Margins = new MarginSettings { Top = 8.5, Left = 0, Right = 0 },
+                DocumentTitle = "Opportunities Report",
             };
 
             var objectSettings = new ObjectSettings
             {
                 PagesCount = true,
-                //HtmlContent = TemplateGenerator.GetHTMLString(),
-                Page = "https://code-maze.com/", //USE THIS PROPERTY TO GENERATE PDF CONTENT FROM AN HTML PAGE
+                HtmlContent = TemplateGenerator.GetHTMLString(),
                 WebSettings = { DefaultEncoding = "utf-8", UserStyleSheet = Path.Combine(Directory.GetCurrentDirectory(), "assets", "styles.css") },
-                HeaderSettings = { FontName = "Arial", FontSize = 9, Right = "Page [page] of [toPage]", Line = true },
-                FooterSettings = { FontName = "Arial", FontSize = 9, Line = true, Center = "Report Footer" }
+                HeaderSettings = { FontName = "Helvetica", FontSize = 9, Right = "Pg [page] of [toPage]", Line = false,
+                    HtmUrl= Path.Combine(Directory.GetCurrentDirectory(), "assets", "header.html") },
+                FooterSettings = { FontName = "Helvetica", FontSize = 9, Line = false, Center = "Report Footer" }
             };
 
             var pdf = new HtmlToPdfDocument()
@@ -46,12 +46,8 @@ namespace PDF_Generator.Controllers
                 Objects = { objectSettings }
             };
 
-            //_converter.Convert(pdf); IF WE USE Out PROPERTY IN THE GlobalSettings CLASS, THIS IS ENOUGH FOR CONVERSION
-
             var file = _converter.Convert(pdf);
 
-            //return Ok("Successfully created PDF document.");
-            //return File(file, "application/pdf", "EmployeeReport.pdf");
             return File(file, "application/pdf");
         }
     }

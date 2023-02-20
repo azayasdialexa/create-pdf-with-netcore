@@ -1,22 +1,137 @@
-﻿.header {
-    text-align: center;
-    color: green;
-    padding-bottom: 35px;
+﻿@font-face {
+    font-family: 'test_font';
+    src: url(Comic_Neue/ComicNeue-Regular.ttf) format('truetype');
+}
+
+* {
+    font-family: 'test_font';
+    color: #252429;
+}
+
+body, html, header {
+    margin: 0; 
+    padding: 0;
+    width: 100%;
+}
+
+thead, tfoot {
+    display: table-row-group;
+}
+
+div.cover {
+    height: 250px;
+    line-height: 250px;
+    width: 70%;
+    background-color: #252429;
+    background-image: url("link-logo-cover.png");
+    background-repeat: no-repeat;
+    background-position-x: 10%;
+    background-position-y: 25%;
+    border-bottom-right-radius: 40px;
+}
+
+#summary {
+    page-break-before: always;
+    padding-top: 1px;
+}
+
+.test-sitemap-1 {
+    display: inline-flex;
+    background-image: url("sitemap-test-1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 800px;
+    height: 723px;
+    max-width: 800px;
+    max-height: 723px;
+    page-break-before: always;
+}
+
+.test-sitemap-2 {
+    display: inline-flex;
+    background-image: url("sitemap-test-2.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 800px;
+    height: 618px;
+    max-width: 800px;
+    max-height: 618px;
+    page-break-before: always;
+}
+
+.page {
+    page-break-before: always;
+    padding-top: 0;
+}
+
+h5 {
+    font-size: 16pt;
+    padding: 0;
+    padding-left: 28pt;
+}
+
+h2, h4 {
+    padding-left: 36pt;
+}
+
+.hideElement {
+    display: none;
+}
+
+div.header {
+    page-break-before: always;
+    width: 100%;
+    margin-top: 0;
+    padding: 10px 0 5px 35px;
+    background-color: #252429;
+}
+
+th.rotate {
+    background-color: #96B7C0;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+table:nth-child(odd) th.rotate {
+    background-color: #CFB380;
+}
+
+th.rotate > div {
+    -webkit-transform: rotate(-90deg);
+    -webkit-transform-origin: 125% 65%;
+    width: 16pt;
+    white-space: nowrap;
 }
 
 table {
-    width: 80%;
+    width: 95%;
     border-collapse: collapse;
+    border: none;
+    margin-bottom: 30pt;
+    page-break-inside: avoid;
 }
 
-td, th {
-    border: 1px solid gray;
-    padding: 15px;
-    font-size: 22px;
-    text-align: center;
+tbody tr:nth-child(odd) {
+    background-color: rgba(150,183,192,0.2);
+}
+
+td {
+    line-height: 26pt;
+    padding-left: 25px;
+    font-size: 12pt;
 }
 
 table th {
-    background-color: green;
-    color: white;
+    line-height: 26pt;
+    background-color: rgba(150,183,192,0.5);
+    color: black;
+    text-align: left;
+}
+
+table:nth-child(odd) th {
+    background-color: rgba(207,170,128,0.5);
+}
+
+table:nth-child(odd) tr:nth-child(odd) {
+    background-color: rgba(207,170,128,0.2);
 }

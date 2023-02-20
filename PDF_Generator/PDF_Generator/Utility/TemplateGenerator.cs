@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Linq;
+using System.Text;
 
 namespace PDF_Generator.Utility
 {
@@ -6,38 +8,56 @@ namespace PDF_Generator.Utility
     {
         public static string GetHTMLString()
         {
-            var employees = DataStorage.GetAllEmployess();
+            var availableMarkets = DataStorage.GetAllMarkets();
+            var availableSummaries = DataStorage.GetAllAvailable();
 
             var sb = new StringBuilder();
             sb.Append(@"
                         <html>
-                            <head>
-                            </head>
                             <body>
-                                <div class='header'><h1>This is the generated PDF report!!!</h1></div>
-                                <table align='center'>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>LastName</th>
-                                        <th>Age</th>
-                                        <th>Gender</th>
-                                    </tr>");
+                                <div id='cover' class='cover'></div>
+                                <h2>Opportunities Report</h2>
+                                <h4>Feb 2023</h4>
+                                <div id='summary'><h5>Availability Summary</h5></div>");
 
-            foreach (var emp in employees)
+            foreach (var market in availableMarkets)
             {
-                sb.AppendFormat(@"<tr>
-                                    <td>{0}</td>
-                                    <td>{1}</td>
-                                    <td>{2}</td>
-                                    <td>{3}</td>
-                                  </tr>", emp.Name, emp.LastName, emp.Age, emp.Gender);
+                sb.AppendFormat(@"
+                                <table align='center' class='table_{0}'>
+                                    <tr>
+                                        <th class='rotate' rowspan=99><div>{1}</div></th>
+                                        <th>Address</th>
+                                        <th>City</th>
+                                        <th>State</th>
+                                        <th>Total SF</th>
+                                        <th>Clear HT</th>
+                                        <th># Doors</th>
+                                        <th>Available</th>
+                                        <th>Leasing Rep</th>
+                                    </tr>"
+                ,market.MarketId, market.Name);
+
+                foreach (var summary in availableSummaries.Where(s => s.MarketId == market.MarketId))
+                {
+                    sb.AppendFormat(@"<tr>
+                                        <td>{0}</td>
+                                        <td>{1}</td>
+                                        <td>{2}</td>
+                                        <td>{3}</td>
+                                        <td>{4}</td>
+                                        <td>{5}</td>
+                                        <td>{6}</td>
+                                        <td>{7}</td>
+                                      </tr>", summary.Address, summary.City, summary.State, summary.TotalSF, summary.ClearHt, summary.Doors, summary.AvailableDate, summary.ListingRep);
+                }
             }
 
             sb.Append(@"
-                                </table>
-                            </body>
-                        </html>");
-
+                                    </table>
+                                    <div class='test-sitemap-1'></div>
+                                    <div class='test-sitemap-2'></div>
+                                </body>
+                            </html>");
             return sb.ToString();
         }
     }
