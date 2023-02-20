@@ -30,6 +30,17 @@ div.cover {
     border-bottom-right-radius: 40px;
 }
 
+div.test-ext-png {
+    height: 750px;
+    line-height: 750px;
+    width: 100%;
+    background-image: url("http://cdn.teachercreated.com/covers/7492.png");
+    background-repeat: no-repeat;
+    page-break-before: always;
+    background-size: contain;
+    border: 1px solid crimson;
+}
+
 #summary {
     page-break-before: always;
     padding-top: 1px;

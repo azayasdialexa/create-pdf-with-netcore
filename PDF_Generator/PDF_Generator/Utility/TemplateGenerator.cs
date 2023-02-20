@@ -54,8 +54,9 @@ namespace PDF_Generator.Utility
 
             sb.Append(@"
                                     </table>
-                                    <div class='test-sitemap-1'></div>
-                                    <div class='test-sitemap-2'></div>
+                                    <div class='test-sitemap-1' ></div>
+                                    <div class='test-sitemap-2' ></div>
+                                    <div class='test-ext-png' /></div>
                                 </body>
                             </html>");
             return sb.ToString();

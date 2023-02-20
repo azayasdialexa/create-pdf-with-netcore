@@ -33,6 +33,8 @@ namespace PDF_Generator.Controllers
             var objectSettings = new ObjectSettings
             {
                 PagesCount = true,
+                UseExternalLinks = true,
+                UseLocalLinks = true,
                 HtmlContent = TemplateGenerator.GetHTMLString(),
                 WebSettings = { DefaultEncoding = "utf-8", UserStyleSheet = Path.Combine(Directory.GetCurrentDirectory(), "assets", "styles.css") },
                 HeaderSettings = { FontName = "Helvetica", FontSize = 9, Right = "Pg [page] of [toPage]", Line = false,
