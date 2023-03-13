@@ -14,7 +14,7 @@ namespace PDF_Generator.Utility
             };
 
         public static List<Available> GetAllAvailable() =>
-            new List<Available>
+            new()
             {
                 new Available { MarketId = 1, Address="9749 Clifford Dr", City="Dallas", State="TX", TotalSF=109200, ClearHt=30, Doors=28, AvailableDate="Immediate", ListingRep="Tracy Bertman"},
                 new Available { MarketId = 1, Address="3150 Marquis Dr", City="Garland", State="TX", TotalSF=355071, ClearHt=32, Doors=128, AvailableDate="3/12/23", ListingRep="Tracy Bertman"},
