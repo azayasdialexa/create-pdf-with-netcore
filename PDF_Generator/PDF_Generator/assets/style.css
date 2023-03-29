@@ -1,0 +1,99 @@
+﻿body, html, header {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 792px;
+    font-family: "tt-hoves";
+}
+
+.grid {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    min-height: 100%;
+}
+
+.header {
+    background-color: #efefef;
+    min-height: 200px;
+}
+
+.footer span {
+    color: green;
+}
+
+.col-2 {
+    width: 50%;
+    margin: 0;
+    padding: 0;
+    float: left;
+    clear: right;
+}
+
+.col-4 {
+    width: 25%;
+    margin: 0;
+    padding: 0;
+    float: left;
+    clear: right;
+}
+
+.hero-image {
+    border-radius: 2.7%;
+    background-image: url("large-property.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 120px;
+    width: 210px;
+    margin-top: 50px;
+    margin-left: 60px;
+}
+
+.property-name-address {
+    width: fit-content;
+    height: fit-content;
+}
+
+.property-name {
+    font-weight: 300;
+    font-size: 28px;
+    line-height: 33px;
+}
+
+.property-address {
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 24px;
+    color: #5C5A66;
+}
+
+.property-details {
+    margin-left: 50px;
+    margin-top: 60px;
+}
+
+.property-id-specs {
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.specs-left, .specs-right {
+    width: fit-content;
+    display: inline-table;
+    width: 49.5%;
+}
+
+label {
+    padding-right: 4px;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+p span {
+    font-weight: 900;
+}

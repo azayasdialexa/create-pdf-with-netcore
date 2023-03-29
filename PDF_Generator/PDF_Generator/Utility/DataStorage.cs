@@ -8,9 +8,7 @@ namespace PDF_Generator.Utility
         public static List<Market> GetAllMarkets() =>
             new List<Market>
             {
-                new Market { MarketId=1, Name="Dallas / Ft. Worth"},
-                new Market { MarketId=2, Name="Austin"},
-                new Market { MarketId=3, Name="DFW 2"},
+                new Market { MarketId=1, Name="Clifford Drive"},
             };
 
         public static List<Available> GetAllAvailable() =>

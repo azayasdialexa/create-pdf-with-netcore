@@ -1,16 +1,20 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="assets\styles.css" />
+    <None Remove="assets\grids-responsive.css" />
+    <None Remove="assets\style.css" />
     <None Remove="libwkhtmltox.dll" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="assets\styles.css">
+    <Content Include="assets\grids-responsive.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\style.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="libwkhtmltox.dll">
@@ -30,27 +34,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="assets\header.html">
+    <None Update="assets\footer.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="assets\link-logo-cover.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="assets\link-logo-cover.svg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="assets\link-logo-page.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="assets\link-logo-page.svg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="assets\sitemap-test.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="assets\sitemap-test.svg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="assets\Icon\" />
   </ItemGroup>
 
 </Project>
