@@ -2,33 +2,110 @@
 <head>
     <link rel="stylesheet" href="style.css">
     <style>
-        @font-face {
-    font-family: "tt-hoves";
-    src: url("TT-Hoves/tt hoves regular.otf");
-}
+        @font-face { font-family: "tt-hoves"; src: url("TT Hoves/tt hoves regular.otf"); }
     </style>
 </head>
 <body>
-    <div class='grid header'>
-        <div class='col-2'>
-            <div class="property-details">
-                <div class="property-name-address">
-                    <div class="property-name">Clifford Drive</div>
-                    <div class=" property-address">9749 Clifford Drive, Dallas, TX 75220</div>
-                </div>
-                <div class="property-id-specs">
-                    <div class="specs-left">
-                            <p><img src="facility.png" /><label>Market:</label><span>Dallas/Ft Worth</span></p>
-                            <p><img src="facility.png" /><label>Submarket:</label><span>Dallas</span></p>
+    <div class="page">
+        <div class='header'>
+            <div class='col-2'>
+                <div class="property-details">
+                    <div class="property-name-address">
+                        <div class="property-name">Clifford Drive</div>
+                        <div class=" property-address">9749 Clifford Drive, Dallas, TX 75220</div>
                     </div>
-                    <div class="specs-right">
-                        <p><img src="facility.png" /><label>Market:</label></p>
-                        <p><img src="facility.png" /><label>Submarket:</label></p>
+                    <div class="property-id-specs">
+                        <div class="specs-left">
+                            <table>
+                                <tr><td><img class="icon" src="market.png" /></td><td>Market:</td><td class="details">Dallas/Ft Worth</td></tr>
+                                <tr><td><img class="icon" src="submarket.png" /></td><td>Submarket:</td><td class="details">Dallas</td></tr>
+                            </table>
+                        </div>
+                        <div class="specs-right">
+                            <table>
+                                <tr><td><img class="icon" src="clock.png" /></td><td>Available Date:</td><td class="details">Mar 2024</td></tr>
+                                <tr><td><img class="icon" src="ruler.png" /></td><td>Available Sq Ft:</td><td class="details">102,900 Sq Ft</td></tr>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class='col-2'><div class="hero-image"></div></div>
         </div>
-        <div class='col-2'><div class="hero-image"></div></div>
+        <div class="unit-specs-container">
+            <div class="unit-specs">
+                <div class="unit-specs-title">Unit Specs</div>
+                <div class="unit-specs-items">
+                    <div><span>Year Built</span><span>2015</span></div>
+                    <div><span>Warehouse Sq Ft</span><span>100,00 Sq Ft</span></div>
+                    <div><span>Office Sq Ft</span><span>9,200 Sq Ft</span></div>
+                    <div><span>% Office</span><span>9.2%</span></div>
+                    <div><span>Clear Height</span><span>32'</span></div>
+                    <div><span>Dock Door Count</span><span>28 Doors</span></div>
+                    <div><span>Unit Drive In Door(2)</span><span>25 Doors</span></div>
+                    <div><span>Rail Served</span><span>No</span></div>
+                    <div><span>Auto Parking</span><span>160</span></div>
+                    <div><span>Truck Parking</span><span>20</span></div>
+                    <div><span>Truck Court Depth</span><span>130'</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="agent-bar">
+            <div>
+                <div class="avatar"><img src="agent-1.png" /></div>
+                <div class="agent-details">
+                    <span class="agent-name">Tracy Bertman</span><br><span class="agent-title">Broker for ABC Realty</span>
+                </div>
+                <div class="agent-contact">
+                    <table>
+                        <tr><td><img class="icon" src="phone.png" /></td><td>(321) 123-5548)</td></tr>
+                        <tr><td><img class="icon" src="submarket.png" /></td><td>tbertman@linklogistics.com</td></tr>
+                    </table>
+                </div>
+                <div class="divider"><div></div></div>
+                <div class="avatar"><img src="agent-2.png" /></div>
+                <div class="agent-details">
+                    <span class="agent-name">Bill Harmen</span><br><span class="agent-title">Broker for ABC Realty</span>
+                </div>
+                <div class="agent-contact">
+                    <table>
+                        <tr><td><img class="icon" src="phone.png" /></td><td>(321) 123-5548)</td></tr>
+                        <tr><td><img class="icon" src="submarket.png" /></td><td>bharmen@linklogistics.com</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class='agent-bar'>
+                <div>
+                    <div><img class='avatar agent-1'></div>
+                    <div class='agent-details'>
+                        <span class='agent-name'>Tracy Bertman</span><br><span class='agent-title'>Broker for ABC Realty</span>
+                    </div>
+                    <div class='agent-contact'>
+                        <table>
+                            <tr><td><img class='icon phone'/></td><td>(321) 123-5548)</td></tr>
+                            <tr><td><img class='icon email'/></td><td>tbertman@linklogistics.com</td></tr>
+                        </table>
+                    </div>
+                    <div class='divider'><div></div></div>
+                    <div><img class='avatar agent-2'></div>
+                    <div class='agent-details'>
+                        <span class='agent-name'>Bill Harmen</span><br><span class='agent-title'>Broker for ABC Realty</span>
+                    </div>
+                    <div class='agent-contact'>
+                        <table>
+                            <tr><td><img class='icon phone'/></td><td>(321) 123-5548)</td></tr>
+                            <tr><td><img class='icon email'/></td><td>bharmen@linklogistics.com</td></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="footer">
+            <div class="col-4"><div class="logo"><img src="footer-icon.png" /></div></div><div class="title col-2">AVAILABILITY SUMMARY</div><div class="col-4"><div>Page #</div></div>
+        </div>
     </div>
 </body>
 </html>
