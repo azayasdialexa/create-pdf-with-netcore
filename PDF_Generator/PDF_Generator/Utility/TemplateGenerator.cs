@@ -7,11 +7,13 @@ namespace PDF_Generator.Utility
     {
         public static string GetHTMLString()
         {
+            int testListing = 1;
+
             var availableMarkets = DataStorage.GetAllMarkets().FirstOrDefault();
             var availableSubMarkets = DataStorage.GetAllSubMarkets().FirstOrDefault();
-            var availableSummaries = DataStorage.GetAllAvailable().Where(r => r.ListingId == 1).FirstOrDefault();
-            var unitSpecs = DataStorage.GetUnitSpecs().Where(r => r.ListingId == 1).ToList();
-            var agents = DataStorage.GetAgents().AsQueryable().Where(r => r.ListingId == 1).ToList();
+            var availableSummaries = DataStorage.GetAllAvailable().Where(r => r.ListingId == testListing).FirstOrDefault();
+            var unitSpecs = DataStorage.GetUnitSpecs().Where(r => r.ListingId == testListing).ToList();
+            var agents = DataStorage.GetAgents().AsQueryable().Where(r => r.ListingId == testListing).ToList();
 
             var sb = new StringBuilder();
             var returnStr = sb.ToString();
@@ -19,6 +21,7 @@ namespace PDF_Generator.Utility
             sb.AppendFormat(@"
                         <html>
                             <body>
+                                <div class='cover-page'></div>
                                 <div class='page'>
                                     <div class='header'>
                                         <div class='col-2'>
@@ -43,7 +46,7 @@ namespace PDF_Generator.Utility
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class='col-2'><div class='hero-image'></div></div>
+                                        <div class='col-2'><img class='hero-image' width=352 height=200 src={6} /></div>
                                     </div>
                                     <div class='unit-specs-container'>
                                         <div class='unit-specs-title'>Unit Specs</div>
@@ -53,10 +56,13 @@ namespace PDF_Generator.Utility
                                         availableMarkets.Name,
                                         availableSubMarkets.Name,
                                         availableSummaries.AvailableDate,
-                                        availableSummaries.TotalSF);
+                                        availableSummaries.TotalSF,
+                                        availableSummaries.HeroImage);
 
             foreach (var spec in unitSpecs.Where(s => s.ListingId == 1)){
-                sb.AppendFormat(@"      <div><span>{0}</span><span>{1}</span></div>", spec.Name, spec.Value);
+                sb.AppendFormat(@"      <div><span>{0}</span><span>{1}</span></div>", 
+                                        spec.Name, 
+                                        spec.Value);
             }
 
             sb.AppendFormat(@"
@@ -80,7 +86,9 @@ namespace PDF_Generator.Utility
                                                         <tr><td><div class='icon-21 phone'/></td><td>(321) 123-5548)</td></tr>
                                                         <tr><td><div class='icon-21 email'/></td><td>tbertman@linklogistics.com</td></tr>
                                                     </table>
-                                                </td>", agent.Name, agent.Title);
+                                                </td>", 
+                                                agent.Name, 
+                                                agent.Title);
                 if ((agents.Count > 1) && (agents.IndexOf(agent) < agents.Count-1)) {
                     sb.AppendFormat(@"<td class='av-4'><div class='divider'></div></td>");
                 }
@@ -94,8 +102,7 @@ namespace PDF_Generator.Utility
                                     <tr>
                                         <td><div class='link-logo'></div></td>
                                         <td class='title'>AVAILABILITY SUMMARY</td>
-                                        <td class='page'>Page 3</td>
-                                        <td class='footer-spacer'></td>
+                                        <td class='page-num'><span>Page 3</span></td>
                                     </tr>
                                 </table>
                             </div>

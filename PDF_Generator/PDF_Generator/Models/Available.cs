@@ -12,5 +12,6 @@
         public string TotalSF { get; set; }
         public string AvailableDate { get; set; }
         public string ListingRep { get; set; }
+        public string HeroImage { get; set; }
     }
 }
