@@ -48,7 +48,7 @@ td.spacer {
 }
 
 .hero-image {
-    background-image: url("hero-image.png");
+    background-image: url("graphics/hero-image.png");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 100%;
@@ -127,27 +127,27 @@ td.spacer {
 }
 
 div.market {
-    background-image: url("market.png");
+    background-image: url("graphics/market.png");
 }
 
 .submarket {
-    background-image: url("submarket.png");
+    background-image: url("graphics/submarket.png");
 }
 
 .clock {
-    background-image: url("clock-1.png");
+    background-image: url("graphics/clock.png");
 }
 
 .ruler {
-    background-image: url("ruler.png");
+    background-image: url("graphics/ruler.png");
 }
 
 .phone {
-    background-image: url("phone.png");
+    background-image: url("graphics/phone.png");
 }
 
 .email {
-    background-image: url("email.png");
+    background-image: url("graphics/email.png");
 }
 
 .unit-specs-container {
@@ -201,7 +201,6 @@ div.market {
 }
 
 div.full-width {
-    background-color: lightcoral;
     display: block;
     height: 3px;
     width: 100%;
@@ -248,7 +247,6 @@ div.avatar {
 }
 
 div.agent-1 {
-    background-image: url("agent-1.png");
     background-repeat: no-repeat;
     background-size: contain;
     display: inline-block;
@@ -257,7 +255,7 @@ div.agent-1 {
 }
 
 div.agent-2 {
-    background-image: url("agent-2.png");
+    background-image: url("graphics/agent-2.png");
     background-repeat: no-repeat;
     background-size: contain;
     display: inline-block;
@@ -330,7 +328,6 @@ div.agent-contact table {
 }
 
 div.agent-contact table tr > td {
-    background-color: lightcoral;
     font-size: 12px;
     line-height: 25px;
     padding-top: 0px;
@@ -349,6 +346,13 @@ div.divider {
     width: 100%;
 }
 
+.footer td {
+    display: table-cell;
+    height: 80px;
+    margin: auto;
+    vertical-align: middle;
+}
+
 .footer table {
     height: 80px;
     margin-top: 0;
@@ -356,20 +360,10 @@ div.divider {
     width: 100%;
 }
 
-div.footer-icon {
+div.link-logo {
     height: 100%;
     padding-left: 40px;
     padding-top: 13px;
-}
-
-div.footer-icon div {
-    background-image: url("footer-icon.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    display: contents;
-    height: 27px;
-    overflow: hidden;
-    width: 106px;
 }
 
 .footer td.title {
@@ -381,25 +375,22 @@ div.footer-icon div {
     width: 50%;
 }
 
-.footer div {
+.footer div.link-logo {
+    background-image: url("graphics/link-logo.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: 60px;
     display: table-cell;
-    height: 80px;
-    margin: auto;
-    vertical-align: middle;
-}
-
-.footer div.logo {
-    height: 80px;
-    margin: auto;
-    text-align: center;
-    vertical-align: middle;
+    height: 27px;
+    width: 106px;
 }
 
 .footer td:nth-of-type(1) {
-    width: 25%;
+    width: 200px;
+    padding-left: 40px;
 }
 
-td.page {
+td.page-num {
     color: #A5A5A5;
     font-size: 19px;
     font-weight: 900;

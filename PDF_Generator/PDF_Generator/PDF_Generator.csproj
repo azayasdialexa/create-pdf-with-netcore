@@ -5,15 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="assets\grids-responsive.css" />
     <None Remove="assets\style.css" />
     <None Remove="libwkhtmltox.dll" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="assets\grids-responsive.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="assets\style.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -37,10 +33,6 @@
     <None Update="assets\footer.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="assets\Icon\" />
   </ItemGroup>
 
 </Project>

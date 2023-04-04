@@ -35,7 +35,7 @@ namespace PDF_Generator.Controllers
                 UseExternalLinks = true,
                 UseLocalLinks = true,
                 HtmlContent = TemplateGenerator.GetHTMLString(),
-                WebSettings = { DefaultEncoding = "utf-8", UserStyleSheet = Path.Combine(Directory.GetCurrentDirectory(), "assets", "style.css") },
+                WebSettings = { DefaultEncoding = "utf-8", UserStyleSheet = Path.Combine(Directory.GetCurrentDirectory(), "assets", "style.css"), LoadImages=true },
             };
 
             var pdf = new HtmlToPdfDocument()
